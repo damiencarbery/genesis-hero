@@ -1,4 +1,5 @@
-=== Genesis Hero ===
+# Genesis Hero
+
 Contributors: seothemes
 Donate link: http://seothemes.net/
 Tags: wordpress, plugin, genesis, hero
@@ -10,11 +11,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Adds a hero section to Genesis child themes.
 
-== Description ==
+## Description
 
 Genesis Hero adds a hero section to posts, pages, archives and more. It repositions post titles inside the hero section and also includes an option for subtitles. You can optionally use backstretch for responsive background images and even add a color overlay. Genesis Hero will use the featured image of a page as the background image if one is set. You can also upload a default image that will be used when no featured image is set.
 
-== Installation ==
+# Installation
 
 Installing "Genesis Hero" can be done either by searching for "Genesis Hero" via the "Plugins > Add New" screen in your WordPress dashboard, or by using the following steps:
 
@@ -22,26 +23,26 @@ Installing "Genesis Hero" can be done either by searching for "Genesis Hero" via
 2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard
 3. Activate the plugin through the 'Plugins' menu in WordPress
 
-== Screenshots ==
+# Screenshots
 
 ![Screenshot 1](https://seothemes.net/wp-content/uploads/screenshot-1.png)
 
 ![Screenshot 2](https://seothemes.net/wp-content/uploads/screenshot-2.png)
 
-== Frequently Asked Questions ==
+# Frequently Asked Questions
 
-= What is the plugin for? =
+**What is the plugin for?**
 
 This plugin repositions all of the different page titles output by Genesis into a hero section below the header.
 
-== Changelog ==
+# Changelog
 
-= 0.1.0 =
+**0.1.0**
 * 2017-03-20
 * Initial release
 
-== Upgrade Notice ==
+# Upgrade Notice
 
-= 0.1.0 =
+**0.1.0**
 * 2017-03-20
 * Initial release
