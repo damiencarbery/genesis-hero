@@ -24,9 +24,9 @@ Installing "Genesis Hero" can be done either by searching for "Genesis Hero" via
 
 == Screenshots ==
 
-1. Description of first screenshot named screenshot-1
-2. Description of second screenshot named screenshot-2
-3. Description of third screenshot named screenshot-3
+![Screenshot 1](https://seothemes.net/wp-content/uploads/screenshot-1.png)
+
+![Screenshot 2](https://seothemes.net/wp-content/uploads/screenshot-2.png)
 
 == Frequently Asked Questions ==
 
