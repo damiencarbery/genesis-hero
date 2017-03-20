@@ -1,0 +1,142 @@
+# Copyright (C) 2017 genesis-hero
+# This file is distributed under the same license as the genesis-hero package.
+msgid ""
+msgstr ""
+"Project-Id-Version: genesis-hero\n"
+"Report-Msgid-Bugs-To: http://github.com/seothemes/genesis-hero/issues\n"
+"MIME-Version: 0.1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Lee Anthony <seothemeswp@gmail.com>\n"
+"Language-Team: Seo Themes <seothemeswp@gmail.com>\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: includes/class-genesis-hero-section.php:141
+msgid "Latest Posts"
+msgstr ""
+
+#: includes/class-genesis-hero-section.php:166
+msgid "Page not found!"
+msgstr ""
+
+#: includes/class-genesis-hero-section.php:196
+msgid "Showing the latest posts"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:94, includes/class-genesis-hero-settings.php:95, includes/class-genesis-hero-settings.php:339
+msgid "Genesis Hero"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:129, includes/class-genesis-hero-settings.php:142
+msgid "Settings"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:143
+msgid "Customize the default behaviour of the Genesis Hero plugin."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:147
+msgid "Output CSS"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:148
+msgid "Set this to No if you would like to disable the plugin from outputting CSS."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:158
+msgid "Output JS"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:159
+msgid "Set this to No if you would like to disable the plugin from outputting JavaScript."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:169
+msgid "Enable Hero on"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:170
+msgid "Select which pages and post types to enable the hero section on."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:195
+msgid "Use Featured Image"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:196
+msgid "Check this box to use the Featured Image of a page as the background image."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:202
+msgid "Default Image"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:210
+msgid "Text Alignment"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:211
+msgid "Select the text alignment of the hero section."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:222
+msgid "Text Color"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:223
+msgid "Select a color for the hero text."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:229
+msgid "Enable Overlay"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:230
+msgid "Check this box to enable a color overlay."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:236
+msgid "Overlay Color"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:237
+msgid "Select a color for the hero overlay."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:243
+msgid "Overlay Opacity"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:244
+msgid "This controls the opacity level for the hero overlay."
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:247
+msgid "0.82"
+msgstr ""
+
+#: includes/class-genesis-hero-settings.php:356
+msgid "Save Settings"
+msgstr ""
+
+#: includes/lib/class-genesis-hero-admin-api.php:175
+msgid "Upload an image"
+msgstr ""
+
+#: includes/lib/class-genesis-hero-admin-api.php:175
+msgid "Use image"
+msgstr ""
+
+#: includes/lib/class-genesis-hero-admin-api.php:175
+msgid "Upload new image"
+msgstr ""
+
+#: includes/lib/class-genesis-hero-admin-api.php:176
+msgid "Remove image"
+msgstr ""

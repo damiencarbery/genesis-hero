@@ -1,0 +1,63 @@
+.hero-section {
+	padding: 10% 0;
+	background-color: #fff;
+	border-top: 1px solid #eee;
+	position: relative;
+	overflow-y: hidden;
+
+	.wrap {
+		position: relative;
+		z-index: 1;
+	}
+
+	.after-entry, 
+	.archive-description, 
+	.author-box {
+	    margin-bottom: 0;
+	    padding: 0;
+	}
+
+	.archive-description .entry-title, 
+	.archive-title, 
+	.author-box-title {
+	    font-size: 36px;
+	    font-size: 3.6rem;
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: 100%;
+		width: 100%;
+	}
+
+	h1,
+	p,
+	.breadcrumb,
+	button,
+	.button {
+		margin: 0 auto .382em;
+		display: block;
+		clear: both;
+	}
+
+	p,
+	.breadcrumb {
+		max-width: 720px;
+	}
+
+	.breadcrumb {
+		padding: 0;
+		background-color: transparent;
+		font-size: 20px;
+	    font-size: 2rem;
+	}
+
+	button,
+	.button {
+		margin-top: 1.618em;
+	}
+}
