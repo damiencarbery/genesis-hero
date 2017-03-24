@@ -23,13 +23,7 @@ class Genesis_Hero_Section {
 		// Add excerpts to page edit screen.
 		$this->excerpts();
 
-		// Output custom CSS.
-		add_action( 'wp_head', array( $this, 'css' ), 99 );
-
-		// Output backstretch JS.
-		add_action( 'wp_head', array( $this, 'backstretch' ), 99 );
-
-		// Add hero section to hook.
+		// Add hero section hooks.
 		add_action( 'genesis_setup', array( $this, 'hooks' ) );
 
 		// Display hero section.
@@ -42,56 +36,6 @@ class Genesis_Hero_Section {
 	 */
 	public function excerpts() {
 		add_post_type_support( 'page', 'excerpt' );
-	}
-
-	/**
-	 * Output CSS.
-	 */
-	public function css() {
-
-		$text_color = get_option( 'genesis_hero_text_color' );
-		$text_align = get_option( 'genesis_hero_text_align' );
-		$overlay = get_option( 'genesis_hero_overlay_color' );
-		$opacity = get_option( 'genesis_hero_overlay_opacity' );
-
-		printf( '
-		<style type="text/css" id="genesis-hero">
-		.hero-section h1,
-		.hero-section p,
-		.hero-section .breadcrumb {
-			color: %1$s;
-			text-align: %2$s;
-			float: %2$s;
-		}
-		.hero-section button,
-		.hero-section .button {
-			text-align: %2$s;
-			float: %2$s;
-		}
-		.hero-section .overlay {
-			background-color: %3$s;
-			opacity: %4$s;
-		}
-		</style>', $text_color, $text_align, $overlay, $opacity );
-	}
-
-	/**
-	 * Output backstretch JS.
-	 */
-	public function backstretch() {
-
-		$default = wp_get_attachment_url( get_option( 'genesis_hero_default_image' ) );
-		$featured = get_option( 'genesis_hero_featured_image' );
-
-		if ( true == $default ) {
-			$backstretch = printf( '<script>jQuery( document ).ready( function($) { $( ".hero-section" ).backstretch( "%s" ); } );</script>', esc_html( $default ) );
-		}
-
-		if ( true == $featured && get_the_post_thumbnail_url() ) {
-			$backstretch = printf( '<script>jQuery( document ).ready( function($) { $( ".hero-section" ).backstretch( "%s" ); } );</script>', esc_html( get_the_post_thumbnail_url() ) );
-		}
-
-		return $backstretch;
 	}
 
 	/**
@@ -112,6 +56,7 @@ class Genesis_Hero_Section {
 		remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
 		remove_action( 'genesis_before_loop', 'genesis_do_author_title_description', 15 );
 		remove_action( 'genesis_before_loop', 'genesis_do_cpt_archive_title_description' );
+		remove_action( 'genesis_before_loop', 'genesis_do_search_title' );
 
 		// Hide WooCommerce Page Title.
 		add_filter( 'woocommerce_show_page_title' , function() {
@@ -162,6 +107,9 @@ class Genesis_Hero_Section {
 		} elseif ( is_page_template( 'page_blog.php' ) ) {
 			$title = genesis_do_blog_template_heading();
 
+		} elseif ( is_search() ) {
+			$title = __( 'Search Results', 'genesis-hero' );
+
 		} elseif ( is_404() ) {
 			$title = __( 'Page not found!', 'genesis-hero' );
 
@@ -171,7 +119,7 @@ class Genesis_Hero_Section {
 		} // End if().
 
 		// Add post titles back inside posts loop.
-		if ( is_home() || is_archive() || is_category() || is_tag() || is_tax() ) {
+		if ( is_home() || is_archive() || is_category() || is_tag() || is_tax() || is_search() ) {
 			add_action( 'genesis_entry_header', 'genesis_do_post_title', 2 );
 		}
 
@@ -204,6 +152,9 @@ class Genesis_Hero_Section {
 
 		} elseif ( is_archive() || is_category() || is_tag() || is_tax() ) {
 			$subtitle = category_description();
+
+		} elseif ( is_search() ) {
+			$subtitle = 'Showing search results for: ' . get_search_query();
 
 		} elseif ( ! is_null( get_option( 'page_for_posts' ) ) && is_home() ) {
 			$subtitle = esc_html( get_the_excerpt( get_option( 'page_for_posts' ) ) );
@@ -288,7 +239,7 @@ class Genesis_Hero_Section {
 				$show = true;
 			}
 
-			if ( ! empty( $enabled['archives'] ) && is_archive() || is_category() || is_tag() || is_tax() ) {
+			if ( ! empty( $enabled['archives'] ) && is_archive() || is_category() || is_tag() || is_tax() || is_search() ) {
 				$show = true;
 			}
 

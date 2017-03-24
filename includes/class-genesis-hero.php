@@ -121,6 +121,12 @@ class Genesis_Hero {
 		// Load frontend JS.
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ), 10 );
 
+		// Output inline CSS.
+		add_action( 'wp_head', array( $this, 'inline_css' ), 99 );
+
+		// Output inline JS.
+		add_action( 'wp_head', array( $this, 'inline_js' ), 99 );
+
 		// Load API for generic admin functions.
 		if ( is_admin() ) {
 			$this->admin = new Genesis_Hero_Admin_API();
@@ -162,6 +168,63 @@ class Genesis_Hero {
 		}
 
 	} // End enqueue_scripts()
+
+	/**
+	 * Output CSS.
+	 */
+	public function inline_css() {
+
+		if ( true == get_option( 'genesis_hero_output_css' ) ) {
+
+			$text_color = get_option( 'genesis_hero_text_color' );
+			$text_align = get_option( 'genesis_hero_text_align' );
+			$overlay = get_option( 'genesis_hero_overlay_color' );
+			$opacity = get_option( 'genesis_hero_overlay_opacity' );
+
+			printf( '
+			<style type="text/css" id="genesis-hero">
+			.hero-section h1,
+			.hero-section p,
+			.hero-section .breadcrumb {
+				color: %1$s;
+				text-align: %2$s;
+				float: %2$s;
+			}
+			.hero-section button,
+			.hero-section .button {
+				text-align: %2$s;
+				float: %2$s;
+			}
+			.hero-section .overlay {
+				background-color: %3$s;
+				opacity: %4$s;
+			}
+			</style>', $text_color, $text_align, $overlay, $opacity );
+		}
+	}
+
+	/**
+	 * Output backstretch JS.
+	 */
+	public function inline_js() {
+
+		if ( true == get_option( 'genesis_hero_output_js' ) ) {
+
+			$default = wp_get_attachment_url( get_option( 'genesis_hero_default_image' ) );
+			$featured = get_option( 'genesis_hero_featured_image' );
+			$script = '<script>jQuery( document ).ready( function($) { $( ".hero-section" ).backstretch( "%s", {speed: 1000} ); } );</script>';
+
+			if ( true == $default ) {
+				$backstretch = printf( $script, esc_html( $default ) );
+			}
+
+			if ( true == $featured && get_the_post_thumbnail_url() ) {
+				$backstretch = printf( $script, esc_html( get_the_post_thumbnail_url() ) );
+			}
+
+			return $backstretch;
+		}
+	}
 
 	/**
 	 * Load plugin localisation
